@@ -191,8 +191,8 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
     metadata: {
       jobId: newJob.id,
     },
-    success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment/success`,
-    cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/payment/cancel`,
+    success_url: `https://hireek-platform.vercel.app/payment/success`,
+    cancel_url: `https://hireek-platform.vercel.app/payment/cancel`,
   });
 
   return redirect(session.url as string);

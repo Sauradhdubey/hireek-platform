@@ -42,7 +42,7 @@ export function generateEmailTemplate(jobListingHtml: string): string {
           
           <!-- CTA Button -->
           <div style="margin-top: 32px; text-align: center;">
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="display: inline-block; background-color: #00c951; color: white; font-weight: 500; font-size: 16px; padding: 12px 24px; text-decoration: none; border-radius: 6px;">
+            <a href="https://hireek-platform.vercel.app" style="display: inline-block; background-color: #00c951; color: white; font-weight: 500; font-size: 16px; padding: 12px 24px; text-decoration: none; border-radius: 6px;">
               Explore More Jobs
             </a>
           </div>
@@ -54,8 +54,8 @@ export function generateEmailTemplate(jobListingHtml: string): string {
             You're receiving this email because you subscribed to job alerts from Hireek.
           </p>
           <div style="margin-bottom: 16px;">
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL}/preferences" style="color: #00c951; text-decoration: none; font-size: 14px; margin: 0 10px;">Update Preferences</a>
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL}/unsubscribe" style="color: #00c951; text-decoration: none; font-size: 14px; margin: 0 10px;">Unsubscribe</a>
+            <a href="https://hireek-platform.vercel.app/preferences" style="color: #00c951; text-decoration: none; font-size: 14px; margin: 0 10px;">Update Preferences</a>
+            <a href="https://hireek-platform.vercel.app/unsubscribe" style="color: #00c951; text-decoration: none; font-size: 14px; margin: 0 10px;">Unsubscribe</a>
           </div>
           <p style="margin: 0; font-size: 13px; color: #888;">
             © ${new Date().getFullYear()} Hireek. All rights reserved.

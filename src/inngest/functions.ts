@@ -93,7 +93,7 @@ export const sendPeriodicJobListings = inngest.createFunction(
                 </p>
               </div>
               <div style="margin-top: 16px;">
-                <a href="${process.env.NEXT_PUBLIC_BASE_URL}/job" style="display: inline-block; font-size: 14px; font-weight: 500; color: #00c951; text-decoration: none;">
+                <a href="https://hireek-platform.vercel.app/job/${job.id}" style="display: inline-block; font-size: 14px; font-weight: 500; color: #00c951; text-decoration: none;">
                   View Job Details →
                 </a>
               </div>
