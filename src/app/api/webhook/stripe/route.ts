@@ -48,7 +48,7 @@ export async function POST(req: Request){
         })
 
         if(!user?.company?.id){
-            return new Response("Company not found", { status: 400 });
+            return new Response("Company not found.", { status: 400 });
         }
 
         await prisma.job.update({
