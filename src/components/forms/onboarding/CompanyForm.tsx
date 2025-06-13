@@ -38,7 +38,7 @@ const CompanyForm = () => {
       name: "",
       about: "",
       location: "",
-      logo: "https://6sn8pk7mrd.ufs.sh/f/1T4FQGtliscoevNXIXHKz7Qh2L5lb4wjvr63FmyAifHPsJuE",
+      logo: "",
       website: "",
       xAccount: "",
     },

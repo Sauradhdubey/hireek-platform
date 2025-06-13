@@ -141,7 +141,7 @@ const page = async ({ searchParams }: SearchParams) => {
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         <CopyLinkMenuItem
-                          jobUrl={`${process.env.NEXT_PUBLIC_URL}/job/${application.job.id}`}
+                          jobUrl={`https://hireek-platform.vercel.app/job/${application.job.id}`}
                         />
                         <DropdownMenuSeparator />
                         <DropdownMenuItem asChild>
@@ -256,7 +256,7 @@ const page = async ({ searchParams }: SearchParams) => {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <CopyLinkMenuItem
-                            jobUrl={`${process.env.NEXT_PUBLIC_URL}/job/${application.job.id}`}
+                            jobUrl={`https://hireek-platform.vercel.app/job/${application.job.id}`}
                           />
                           <DropdownMenuSeparator />
                           <DropdownMenuItem asChild>

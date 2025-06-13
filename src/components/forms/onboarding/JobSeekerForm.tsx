@@ -27,8 +27,7 @@ const JobSeekerForm = () => {
     defaultValues: {
       name: "",
       about: "",
-      resume:
-        "https://6sn8pk7mrd.ufs.sh/f/1T4FQGtliscoyMnL6V8SpFGxP0Q9KWHywR4izk6aTX5uVo3N",
+      resume: "",
     },
   });
 
