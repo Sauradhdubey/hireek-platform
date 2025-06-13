@@ -17,7 +17,7 @@ const page = async () => {
   await isCompany();
   const companydata = await getCompany(user.id as string);
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-6 pb-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-6 pb-8 lg:pb-12">
       {/* Create Job Form */}
       <CreateJobForm
         companyName={companydata.name}
