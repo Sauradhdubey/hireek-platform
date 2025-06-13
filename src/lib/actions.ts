@@ -161,13 +161,13 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
   }
 
   // Send the job creation event to Inngest
-  await inngest.send({
-    name: "job/created",
-    data: {
-      jobId: newJob.id,
-      expirationDays: validatedData.listingDuration,
-    },
-  });
+  // await inngest.send({
+  //   name: "job/created",
+  //   data: {
+  //     jobId: newJob.id,
+  //     expirationDays: validatedData.listingDuration,
+  //   },
+  // });
 
   const session = await stripe.checkout.sessions.create({
     customer: stripeCustomerId,
