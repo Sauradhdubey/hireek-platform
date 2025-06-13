@@ -14,7 +14,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { stripe } from "./stripe";
 import { jobListingDurationPricing } from "@/utils/pricingTiers";
-// import { inngest } from "@/inngest/client";
+import { inngest } from "@/inngest/client";
 import { revalidatePath } from "next/cache";
 
 const aj = arcjet
@@ -161,13 +161,13 @@ export async function createJob(data: z.infer<typeof jobSchema>) {
   }
 
   // Send the job creation event to Inngest
-  // await inngest.send({
-  //   name: "job/created",
-  //   data: {
-  //     jobId: newJob.id,
-  //     expirationDays: validatedData.listingDuration,
-  //   },
-  // });
+  await inngest.send({
+    name: "job/created",
+    data: {
+      jobId: newJob.id,
+      expirationDays: validatedData.listingDuration,
+    },
+  });
 
   const session = await stripe.checkout.sessions.create({
     customer: stripeCustomerId,
@@ -314,10 +314,10 @@ export async function deleteJobPost(jobId: string) {
     },
   });
 
-  // await inngest.send({
-  //   name: "job/cancel.expiration",
-  //   data: { jobId: jobId },
-  // });
+  await inngest.send({
+    name: "job/cancel.expiration",
+    data: { jobId: jobId },
+  });
 
   return;
 }
