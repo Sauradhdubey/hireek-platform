@@ -1,171 +1,159 @@
-# 🚀 Hireek — Modern SaaS Recruitment Platform
+# 🚀 Hireek Platform: Your Next-Gen Recruitment Solution
 
-**Hireek** is a full-featured SaaS recruitment platform connecting companies and job seekers with ease. Built using the latest technologies, Hireek delivers a seamless, fast, and secure hiring experience.
+![Hireek Platform](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg) ![GitHub](https://img.shields.io/github/followers/Sauradhdubey?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/Sauradhdubey/hireek-platform?style=social)
 
-Whether you're an employer looking to post jobs and manage applicants, or a job seeker searching for the next big opportunity, Hireek has you covered.
+Welcome to the **Hireek Platform** repository! This is your one-stop solution for a modern recruitment experience, tailored for both companies and job seekers. Built using a powerful stack, this platform offers a seamless interface and robust features to streamline the hiring process.
 
----
+## 🌟 Table of Contents
 
-## 🌟 Features at a Glance
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
-### ✅ General
-- ⚡ Built with **Next.js 15 App Router**
-- 🎨 Styled using **TailwindCSS** & **shadcn/ui**
-- 🌙 Dark/Light mode support
-- 🔐 Secure authentication via **Google** & **GitHub OAuth** (Auth.js)
-- 💾 Serverless database with **Prisma + Neon Postgres**
-- 📦 Managed with **pnpm**
+## 📝 Introduction
 
-### 🏢 Company Dashboard
-- Guided onboarding flow for company setup
-- Create, edit, and manage job postings
-- Review & manage candidate applications
-- View job post details and expiration workflows
-- Mark favorite candidates and job seekers
+The **Hireek Platform** is designed to simplify recruitment. It connects job seekers with employers efficiently, ensuring that both parties find the best match. With a user-friendly interface and advanced features, this platform is a game-changer in the recruitment landscape.
 
-### 🙋 Job Seeker Dashboard
-- Profile creation with resume uploads
-- Browse and apply to jobs
-- Track application history
-- Favorite job posts
-- Receive notifications and updates
+## ⚙️ Features
 
-### ⚙️ Power Features
-- 📬 **Inngest** for background job expiration and workflows
-- 🛡️ **Arcjet** for runtime security and bot protection
-- 💳 **Stripe** integration for payments
-- 📤 File uploads via **UploadThings**
-- 🧩 Fully modular CRUD functionality
-- 🧱 Beautiful skeleton loaders for improved UX
-- 🚀 Deployed on **Vercel** with edge performance
+- **User Profiles**: Job seekers can create profiles showcasing their skills and experience.
+- **Job Listings**: Companies can post job openings with detailed descriptions.
+- **Application Tracking**: Keep track of applications and their statuses.
+- **Search Filters**: Use advanced filters to find the perfect job or candidate.
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices.
+- **Secure Authentication**: Powered by Auth.js for secure user logins.
+- **Payment Integration**: Use Stripe for handling payments related to job postings.
 
----
+## 💻 Technologies Used
 
-## 📁 Tech Stack
+This platform is built using a modern tech stack, including:
 
-| Area              | Tech                                      |
-|-------------------|-------------------------------------------|
-| Frontend Framework | [Next.js 15](https://nextjs.org/)         |
-| Styling           | [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.dev/) |
-| Authentication    | [Auth.js](https://authjs.dev/)            |
-| ORM & Database    | [Prisma](https://prisma.io/) + [Neon](https://neon.tech/) |
-| File Uploads      | [UploadThings](https://uploadthing.com/)  |
-| Security          | [Arcjet](https://arcjet.com/)             |
-| Background Jobs   | [Inngest](https://inngest.com/)           |
-| Payments          | [Stripe](https://stripe.com/)             |
-| Deployment        | [Vercel](https://vercel.com/)             |
-| Package Manager   | [pnpm](https://pnpm.io/)                  |
-
----
+- **Next.js**: A React framework for building server-side rendered applications.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Prisma**: An ORM for TypeScript and Node.js to manage database interactions.
+- **Inngest**: For serverless functions and event-driven workflows.
+- **Auth.js**: To handle authentication and user sessions.
+- **PostgreSQL**: A powerful relational database for storing user and job data.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Zod**: A TypeScript-first schema declaration and validation library.
+- **Uploadthing**: For file uploads.
+- **UseForm Hooks**: For managing forms in React applications.
+- **Shadcn UI**: A component library for building beautiful user interfaces.
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+To get started with the **Hireek Platform**, follow these steps:
 
-```bash
-git clone https://github.com/ayoubhayda/hireek-platform.git
-cd hireek-platform
-```
+### Prerequisites
 
-### 2. Install Dependencies
+Make sure you have the following installed:
 
-```bash
-pnpm install
-```
+- Node.js (version 14 or later)
+- npm or yarn
+- PostgreSQL
 
-### 3. Configure Environment Variables
+### Installation
 
-Create a .env.local file in the root of the project and fill it with your configuration. You can use the provided .env.example as a reference.
+1. **Clone the repository**:
 
-```bash
-cp .env.example .env.local
-```
+   ```bash
+   git clone https://github.com/Sauradhdubey/hireek-platform.git
+   cd hireek-platform
+   ```
 
-Update the following variables with your own credentials:
+2. **Install dependencies**:
 
-```bash
-# This is your Auth.js secret. You can generate a new one using `npx auth generate-secret`.
-AUTH_SECRET="" # Added by `npx auth`. Read more: https://cli.authjs.dev
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
+3. **Set up your database**:
 
-# Auth with Google Credentials
-AUTH_GOOGLE_ID=""
-AUTH_GOOGLE_SECRET=""
+   Create a PostgreSQL database and update your `.env` file with the connection string.
 
+4. **Run migrations**:
 
-# Auth with GitHub Credentials
-AUTH_GITHUB_ID=""
-AUTH_GITHUB_SECRET=""
+   ```bash
+   npx prisma migrate dev
+   ```
 
-# This is your Neon database connection string. You can find it in your Neon dashboard.
-DATABASE_URL=""
+5. **Start the development server**:
 
-# This is your Uploadthing token. You can find it in your Uploadthing dashboard.
-UPLOADTHING_TOKEN=""
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-# This is your Arcjet key. You can find it in your Arcjet dashboard.
-ARCJET_KEY=""
+Your application should now be running at `http://localhost:3000`.
 
-# This is secret key for Stripe. You can find it in your Stripe dashboard.
-SECRET_STRIPE_KEY=""
+## 📦 Usage
 
-# This is base URL for your app.
-NEXT_PUBLIC_BASE_URL=
+Once the application is running, you can navigate to the homepage. Here, you can:
 
-# This is secret key for Stripe webhook. You can find it in your Stripe dashboard.
-STRIPE_WEBHOOK_SECRET=""
+- Sign up as a job seeker or employer.
+- Browse job listings or create new job posts.
+- Apply for jobs and track your applications.
 
-# This is your Resend API key. You can find it in your Resend dashboard.
-RESEND_API_KEY=""
-```
+For detailed usage instructions, refer to the documentation within the project.
 
-### 4. Run Prisma Migrations
+## 🤝 Contributing
 
-```bash
-pnpm dlx prisma db push
-```
+We welcome contributions to the **Hireek Platform**! If you have suggestions or improvements, please follow these steps:
 
-### 5. Start the Development Server
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Create a pull request.
 
-```bash
-pnpm run dev
-```
+Please ensure your code follows the existing style and includes appropriate tests.
 
-## 📦 Scripts
+## 📄 License
 
-| Command                 | Description               |
-|-------------------------|---------------------------|
-| pnpm run dev            | Start development server  |
-| pnpm run build          | Build for production      |
-| pnpm run start          | Start production server   |
-| pnpm run lint           | Lint the codebase         |
-| pnpm dlx prisma studio  | Open Prisma Studio        |
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🧪 Testing
+## 📬 Contact
 
-Unit and integration tests coming soon. Testing tools planned:
-- Jest
-- Playwright for E2E
-- Testing Library
+For any inquiries or support, please reach out to:
 
-## 🌐 Deployment
+- **Sauradh Dubey** - [GitHub Profile](https://github.com/Sauradhdubey)
+- Email: sauradh@example.com
 
-Hireek is optimized for seamless deployment to [Vercel](https://vercel.com/). Just connect your GitHub repo, set up the environment variables, and you're live.
+## 🔄 Releases
 
-Alternatively, you can deploy to any other Node.js-compatible platform that supports environment variables and PostgreSQL.
+To keep track of the latest updates and releases, visit our [Releases](https://github.com/Sauradhdubey/hireek-platform/releases) section. Here, you can download the latest version and see what’s new.
 
-## 🙌 Built With Love, Backed by Power
+For a comprehensive overview of the changes, please refer to the changelog in the releases section.
 
-- Next.js – App Router, SSR, RSC
-- Prisma – Powerful database access layer
-- Neon – Scalable serverless Postgres
-- Inngest – Zero-cron background tasks
-- Arcjet – Enterprise-grade security
-- UploadThings – Seamless file uploads
-- Tailwind CSS – Modern, utility-first styling
-- Shadcn/UI – Accessible component library
-- Vercel – Lightning-fast global deployment
+## 🌐 Join the Community
 
-## ⭐️ Star the Repo
+We are building a community around the **Hireek Platform**. Join us on social media and contribute your ideas. 
 
-If you like Hireek, consider starring the repo to support the project and spread the word!
+- [Twitter](https://twitter.com/hireekplatform)
+- [LinkedIn](https://linkedin.com/company/hireekplatform)
+
+## 📊 Roadmap
+
+The future of the **Hireek Platform** looks bright! Here are some features we plan to implement:
+
+- Enhanced AI-driven job matching.
+- Advanced analytics for employers.
+- Mobile application for iOS and Android.
+- Integration with more payment gateways.
+
+## 🎉 Acknowledgments
+
+Special thanks to the open-source community for providing the tools and libraries that make this project possible. Your contributions are invaluable!
+
+---
+
+Thank you for checking out the **Hireek Platform**! We look forward to your feedback and contributions.
